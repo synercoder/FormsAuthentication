@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <p>Click <a asp-action="Index" asp-controller="Security">security</a> to go to the security page and view your claimsprincipal.</p>
+        }
+        else
+        {
+            <p>Click <a asp-action="Index" asp-controller="Security">security</a> to go to the security page and be redirected to the login page.</p>
+        }
+    </div>
+</div>

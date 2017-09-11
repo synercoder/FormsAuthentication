@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Security information";
+}
+
+<h1>User data</h1>
+
+<h3>Identity</h3>
+
+<p><a asp-action="Logout">Logoff</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td>@User.Identity.Name</td>
+        </tr>
+        <tr>
+            <td>IsAuthenticated</td>
+            <td>@User.Identity.IsAuthenticated</td>
+        </tr>
+        <tr>
+            <td>AuthenticationType</td>
+            <td>@User.Identity.AuthenticationType</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Claims</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Issuer</th>
+            <th>OriginalIssuer</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>ValueType</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in User.Claims)
+        {
+            <tr>
+                <td>@claim.Issuer</td>
+                <td>@claim.OriginalIssuer</td>
+                <td>@claim.Type</td>
+                <td>@claim.Value</td>
+                <td>@claim.ValueType</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Description>With this package you can use ASP.NET Forms Authentication, alot of the code for this package was taken (and altered) from https://github.com/Microsoft/referencesource/tree/master/System.Web/Security under MIT license.</Description>
+    <Company>Synercoding</Company>
+    <Authors>Synercoding</Authors>
+    <Version>2.0.1</Version>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <FileVersion>2.0.1.0</FileVersion>
+    <RepositoryUrl>https://github.com/synercoder/FormsAuthentication</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/synercoder/FormsAuthentication</PackageProjectUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="predel\**" />
+    <EmbeddedResource Remove="predel\**" />
+    <None Remove="predel\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>

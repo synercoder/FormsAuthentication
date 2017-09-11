@@ -1,0 +1,21 @@
+﻿@model TestImplementation.SetCookie.Models.LoginVM
+@{
+    ViewBag.Title = "Login Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Login</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(m => m.ReturnUrl)
+            <div>
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+            <div>
+                <input type="submit" value="Submit" />
+            </div>
+        }
+    </div>
+</div>
