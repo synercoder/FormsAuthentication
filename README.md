@@ -5,8 +5,7 @@ NuGet: [![NuGet Shield](https://img.shields.io/nuget/dt/Synercoding.FormsAuthent
 
 Usage:
 
-<pre><code>
-var section = Configuration.GetSection("FormsAuthentication");
+<pre><code>var section = Configuration.GetSection("FormsAuthentication");
 
 var faOptions = new FormsAuthenticationOptions()
 {
@@ -34,7 +33,6 @@ services
             FormsAuthHelper.ConvertCookieToTicket,
             FormsAuthHelper.ConvertTicketToCookie
             );</strong>
-    });
-    </code></pre>
+    });</code></pre>
     
 The `FormsAuthHelper.ConvertCookieToTicket` and `FormsAuthHelper.ConvertTicketToCookie` helper methods convert an ASP.NET Core `AuthenticationTicket` to a `FormsAuthenticationCookie` and vise versa. This class contains the same data as a old ASPNET Cookie.
