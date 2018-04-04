@@ -35,8 +35,15 @@ namespace Synercoding.FormsAuthentication
 
         public TData Unprotect(string protectedText, string purpose)
         {
-            var cookie = _cryptor.Unprotect(protectedText);
-            return _convertFrom(cookie);
+            try
+            {
+                var cookie = _cryptor.Unprotect(protectedText);
+                return _convertFrom(cookie);
+            }
+            catch
+            {
+                return default(TData);
+            }
         }
     }
 }
