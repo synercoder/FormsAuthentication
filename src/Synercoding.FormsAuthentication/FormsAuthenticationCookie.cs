@@ -4,6 +4,7 @@ namespace Synercoding.FormsAuthentication
 {
     public class FormsAuthenticationCookie
     {
+		public byte Version { get; set; }
         public DateTime IssuedUtc { get; set; }
         public DateTime ExpiresUtc { get; set; }
         public bool IsPersistent { get; set; }
