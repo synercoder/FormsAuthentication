@@ -103,8 +103,8 @@ namespace Synercoding.FormsAuthentication
                 //create ticket
                 return new FormsAuthenticationCookie()
                 {
-					Version = ticketVersion,
-					UserName = ticketName,
+                    Version = ticketVersion,
+                    UserName = ticketName,
                     UserData = ticketUserData,
                     CookiePath = ticketCookiePath,
                     IsPersistent = ticketIsPersistent,
