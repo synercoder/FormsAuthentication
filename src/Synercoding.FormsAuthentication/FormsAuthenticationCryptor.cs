@@ -56,7 +56,7 @@ namespace Synercoding.FormsAuthentication
             using (var ticketWriter = new SerializingBinaryWriter(ticketBlobStream))
             {
                 ticketWriter.Write((byte)1);
-                ticketWriter.Write((byte)1);
+                ticketWriter.Write(data.Version);
                 ticketWriter.Write(data.IssuedUtc.Ticks);
                 ticketWriter.Write((byte)0xfe);
                 ticketWriter.Write(data.ExpiresUtc.Ticks);
@@ -82,7 +82,7 @@ namespace Synercoding.FormsAuthentication
                 if (serializedFormatVersion != 0x01)
                     throw new ArgumentException("The data is not in the correct format, first byte must be 0x01.", nameof(data));
 
-                int ticketVersion = ticketReader.ReadByte();
+                byte ticketVersion = ticketReader.ReadByte();
 
                 DateTime ticketIssueDateUtc = new DateTime(ticketReader.ReadInt64(), DateTimeKind.Utc);
 
@@ -103,6 +103,7 @@ namespace Synercoding.FormsAuthentication
                 //create ticket
                 return new FormsAuthenticationCookie()
                 {
+                    Version = ticketVersion,
                     UserName = ticketName,
                     UserData = ticketUserData,
                     CookiePath = ticketCookiePath,
