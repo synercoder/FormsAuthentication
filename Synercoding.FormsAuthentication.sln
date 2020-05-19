@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Synercoding.FormsAuthentication", "src\Synercoding.FormsAuthentication\Synercoding.FormsAuthentication.csproj", "{121C0FBF-2419-45B9-88DB-705DE22639B0}"
 EndProject
@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{DA8F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestImplementation.SetCookie", "samples\TestImplementation.SetCookie\TestImplementation.SetCookie.csproj", "{83A0D43F-E37E-4FF8-833D-4E26F8347749}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestImplementation.ReadCookie", "samples\TestImplementation.ReadCookie\TestImplementation.ReadCookie.csproj", "{D198053D-43F2-4F11-A1A6-B664B955E504}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestImplementation.ReadCookie", "samples\TestImplementation.ReadCookie\TestImplementation.ReadCookie.csproj", "{C9D888EF-10E6-4703-B1D1-ECE0A47E89C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +27,10 @@ Global
 		{83A0D43F-E37E-4FF8-833D-4E26F8347749}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83A0D43F-E37E-4FF8-833D-4E26F8347749}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83A0D43F-E37E-4FF8-833D-4E26F8347749}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D198053D-43F2-4F11-A1A6-B664B955E504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D198053D-43F2-4F11-A1A6-B664B955E504}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D198053D-43F2-4F11-A1A6-B664B955E504}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D198053D-43F2-4F11-A1A6-B664B955E504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9D888EF-10E6-4703-B1D1-ECE0A47E89C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9D888EF-10E6-4703-B1D1-ECE0A47E89C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9D888EF-10E6-4703-B1D1-ECE0A47E89C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9D888EF-10E6-4703-B1D1-ECE0A47E89C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,7 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{121C0FBF-2419-45B9-88DB-705DE22639B0} = {BA80AAEB-9E96-4B2A-804A-5F03ED8D846C}
 		{83A0D43F-E37E-4FF8-833D-4E26F8347749} = {DA8FFBBF-91B4-470A-B813-0CCE8B7A1752}
-		{D198053D-43F2-4F11-A1A6-B664B955E504} = {DA8FFBBF-91B4-470A-B813-0CCE8B7A1752}
+		{C9D888EF-10E6-4703-B1D1-ECE0A47E89C0} = {DA8FFBBF-91B4-470A-B813-0CCE8B7A1752}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5B0C57E-B173-4F4A-97BD-F983391EA099}

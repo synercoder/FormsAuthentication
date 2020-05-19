@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Synercoding.FormsAuthentication;
 using System;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 
 namespace TestImplementation.ReadCookie
 {
@@ -53,7 +53,7 @@ namespace TestImplementation.ReadCookie
             if (string.IsNullOrWhiteSpace(baseUrl))
                 baseUrl = string.Concat(request.Scheme, "://", request.Host.ToUriComponent());
 
-            context.RedirectUri = baseUrl + context.Options.LoginPath + "?" + context.Options.ReturnUrlParameter + "=" + absoluteUri;
+            context.RedirectUri = baseUrl.TrimEnd('/') + context.Options.LoginPath + "?" + context.Options.ReturnUrlParameter + "=" + absoluteUri;
 
             if (IsAjaxRequest(context.Request))
             {

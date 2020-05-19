@@ -1,30 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Description>With this package you can use ASP.NET Forms Authentication, alot of the code for this package was taken (and altered) from https://github.com/Microsoft/referencesource/tree/master/System.Web/Security under MIT license.</Description>
     <Company>Synercoding</Company>
     <Authors>Synercoding</Authors>
-    <Version>2.1.0</Version>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <Version>3.1-alpha01</Version>
+    <AssemblyVersion>3.1.0.0</AssemblyVersion>
+    <FileVersion>3.1.0.0</FileVersion>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <FileVersion>2.1.0.0</FileVersion>
     <RepositoryUrl>https://github.com/synercoder/FormsAuthentication</RepositoryUrl>
     <PackageProjectUrl>https://github.com/synercoder/FormsAuthentication</PackageProjectUrl>
     <NeutralLanguage>en</NeutralLanguage>
-    <PackageReleaseNotes>Mickaël Derriey (@mderriey) fixed issue #2 in pull #3: Return default value when an exception is thrown while unprotecting data</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated to work with netcore 3.1</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="predel\**" />
-    <EmbeddedResource Remove="predel\**" />
-    <None Remove="predel\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.0.0" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
 </Project>
