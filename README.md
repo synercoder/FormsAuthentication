@@ -1,5 +1,5 @@
 # FormsAuthentication
-Enable ASP.NET Core 2 cookies to read old ASP.NET Forms Authentication cookies by implementing a custom `ISecureDataFormat`.
+Enable ASP.NET Core 3.1 cookies to read old ASP.NET Forms Authentication cookies by implementing a custom `ISecureDataFormat`.
 
 NuGet: [![NuGet Shield](https://img.shields.io/nuget/dt/Synercoding.FormsAuthentication.svg)](https://www.nuget.org/packages/Synercoding.FormsAuthentication/)
 
