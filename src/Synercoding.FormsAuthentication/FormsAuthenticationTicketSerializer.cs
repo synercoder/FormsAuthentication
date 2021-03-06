@@ -4,13 +4,14 @@
 // </copyright>
 //------------------------------------------------------------------------------
 
-namespace System.Web.Security
+namespace Synercoding.FormsAuthentication
 {
     using System;
+    using System.Diagnostics;
     using System.IO;
     using System.Security.Cryptography;
     using System.Text;
-    using System.Web.Util;
+    //using System.Web.Util;
 
     // A helper class which can serialize / deserialize FormsAuthenticationTicket instances.
     //

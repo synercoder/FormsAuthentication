@@ -31,6 +31,9 @@ namespace TestImplementation.ReadCookie
                 ValidationMethod = section.GetValue<ValidationMethod>("ValidationMethod"),
             };
 
+            // Enables injection of IOptions<FormsAuthenticationOptions>
+            services.Configure<FormsAuthenticationOptions>(section);
+
             services.AddAuthentication(options =>
                 {
                     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;

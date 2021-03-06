@@ -10,12 +10,13 @@
  * Copyright (c) 1999 Microsoft Corporation
  */
 
-namespace System.Web.Security
+namespace Synercoding.FormsAuthentication
 {
     using System.Security.Principal;
     using System.Security.Permissions;
-    using System.Web.Configuration;
+    //using System.Web.Configuration;
     using System.Runtime.Serialization;
+    using System;
 
 
     /// <devdoc>
@@ -174,25 +175,25 @@ namespace System.Web.Security
         private DateTime _IssueDateUtc;
 
 
-        /// <devdoc>
-        ///    <para>This constructor creates a
-        ///       FormsAuthenticationTicket instance with explicit values.</para>
-        /// </devdoc>
-        public FormsAuthenticationTicket(int version,
-                                          String name,
-                                          DateTime issueDate,
-                                          DateTime expiration,
-                                          bool isPersistent,
-                                          String userData)
-        {
-            _Version = version;
-            _Name = name;
-            _Expiration = expiration;
-            _IssueDate = issueDate;
-            _IsPersistent = isPersistent;
-            _UserData = userData;
-            _CookiePath = FormsAuthentication.FormsCookiePath;
-        }
+        ///// <devdoc>
+        /////    <para>This constructor creates a
+        /////       FormsAuthenticationTicket instance with explicit values.</para>
+        ///// </devdoc>
+        //public FormsAuthenticationTicket(int version,
+        //                                  String name,
+        //                                  DateTime issueDate,
+        //                                  DateTime expiration,
+        //                                  bool isPersistent,
+        //                                  String userData)
+        //{
+        //    _Version = version;
+        //    _Name = name;
+        //    _Expiration = expiration;
+        //    _IssueDate = issueDate;
+        //    _IsPersistent = isPersistent;
+        //    _UserData = userData;
+        //    _CookiePath = FormsAuthentication.FormsCookiePath;
+        //}
 
 
         public FormsAuthenticationTicket(int version,
@@ -214,25 +215,25 @@ namespace System.Web.Security
 
 
 
-        /// <devdoc>
-        ///    <para> This constructor creates
-        ///       a FormsAuthenticationTicket instance with the specified name and cookie durability,
-        ///       and default values for the other settings.</para>
-        /// </devdoc>
-        public FormsAuthenticationTicket(String name, bool isPersistent, Int32 timeout)
-        {
-            _Version = 2;
-            _Name = name;
-            _IssueDateUtcHasValue = true;
-            _IssueDateUtc = DateTime.UtcNow;
-            _IssueDate = DateTime.Now;
-            _IsPersistent = isPersistent;
-            _UserData = "";
-            _ExpirationUtcHasValue = true;
-            _ExpirationUtc = _IssueDateUtc.AddMinutes(timeout);
-            _Expiration = _IssueDate.AddMinutes(timeout);
-            _CookiePath = FormsAuthentication.FormsCookiePath;
-        }
+        ///// <devdoc>
+        /////    <para> This constructor creates
+        /////       a FormsAuthenticationTicket instance with the specified name and cookie durability,
+        /////       and default values for the other settings.</para>
+        ///// </devdoc>
+        //public FormsAuthenticationTicket(String name, bool isPersistent, Int32 timeout)
+        //{
+        //    _Version = 2;
+        //    _Name = name;
+        //    _IssueDateUtcHasValue = true;
+        //    _IssueDateUtc = DateTime.UtcNow;
+        //    _IssueDate = DateTime.Now;
+        //    _IsPersistent = isPersistent;
+        //    _UserData = "";
+        //    _ExpirationUtcHasValue = true;
+        //    _ExpirationUtc = _IssueDateUtc.AddMinutes(timeout);
+        //    _Expiration = _IssueDate.AddMinutes(timeout);
+        //    _CookiePath = FormsAuthentication.FormsCookiePath;
+        //}
 
         internal static FormsAuthenticationTicket FromUtc(int version, String name, DateTime issueDateUtc, DateTime expirationUtc, bool isPersistent, String userData, String cookiePath)
         {
