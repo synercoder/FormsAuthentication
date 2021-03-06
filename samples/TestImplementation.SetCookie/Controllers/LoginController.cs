@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web;
+using System.Web.Mvc;
 using TestImplementation.SetCookie.Models;
 
 namespace TestImplementation.SetCookie.Controllers
@@ -19,6 +21,10 @@ namespace TestImplementation.SetCookie.Controllers
         {
             if (ModelState.IsValid)
             {
+                var ticket = new System.Web.Security.FormsAuthenticationTicket(1, "TestTicket", DateTime.Now, DateTime.Now.AddDays(1), true, "The answer is '42'.");
+                var encryptedTicket = System.Web.Security.FormsAuthentication.Encrypt(ticket);
+                Response.Cookies.Add(new HttpCookie("TestCookie", encryptedTicket));
+
                 System.Web.Security.FormsAuthentication.SetAuthCookie(model.UserName, true);
                 return Redirect(model.ReturnUrl);
             }

@@ -33,6 +33,20 @@ namespace Synercoding.FormsAuthentication
             return CryptoUtil.BinaryToHex(protectedData);
         }
 
+        public string Protect(FormsAuthenticationTicket ticket)
+        {
+            if (ticket == null)
+                throw new ArgumentNullException(nameof(ticket));
+
+            var unprotectedData = FormsAuthenticationTicketSerializer.Serialize(ticket);
+
+            var cryptoProvider = AspNetCryptoServiceProvider.GetCryptoServiceProvider(_options);
+            var cryptoService = cryptoProvider.GetCryptoService();
+            byte[] protectedData = cryptoService.Protect(unprotectedData);
+
+            return CryptoUtil.BinaryToHex(protectedData);
+        }
+
         public FormsAuthenticationCookie Unprotect(string protectedText)
         {
             if (protectedText == null)
@@ -99,7 +113,7 @@ namespace Synercoding.FormsAuthentication
                 byte footer = ticketReader.ReadByte();
                 if (footer != 0xFF)
                     throw new ArgumentException("The data is not in the correct format, footer byte must be 0xFF.", nameof(data));
-                
+
                 //create ticket
                 return new FormsAuthenticationCookie()
                 {
